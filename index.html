@@ -164,8 +164,36 @@
     font-weight: 700;
     color: var(--forest);
     line-height: 1.3;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
   }
+
+  .q-hint {
+    font-size: 12px;
+    color: var(--sage);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .q-hint::before {
+    content: '☑';
+    font-size: 13px;
+  }
+
+  .q-hint {
+    font-size: 12px;
+    color: var(--sage);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .q-hint::before { content: "☑"; font-size: 13px; }
 
   /* Radio & Checkbox options */
   .options {
@@ -527,28 +555,29 @@
     <div class="question-card">
       <div class="q-number">Întrebarea 1</div>
       <div class="q-text">Cât de des ieși la grătar/picnic în afara orașului?</div>
+      <div class="q-hint">Poți selecta mai multe răspunsuri</div>
       <div class="options" id="q1">
-        <label class="option-label" onclick="selectOption(this,'q1','radio')">
-          <input type="radio" name="q1" value="saptamanal">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q1','check')">
+          <input type="checkbox" name="q1" value="saptamanal">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🔥</span>
           Aproape în fiecare weekend, de la primăvară la toamnă
         </label>
-        <label class="option-label" onclick="selectOption(this,'q1','radio')">
-          <input type="radio" name="q1" value="lunar">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q1','check')">
+          <input type="checkbox" name="q1" value="lunar">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🌿</span>
           De 1–2 ori pe lună în sezon
         </label>
-        <label class="option-label" onclick="selectOption(this,'q1','radio')">
-          <input type="radio" name="q1" value="ocazional">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q1','check')">
+          <input type="checkbox" name="q1" value="ocazional">
+          <span class="option-box">✓</span>
           <span class="option-emoji">📅</span>
           Doar de sărbători (1 Mai, Paști, etc.)
         </label>
-        <label class="option-label" onclick="selectOption(this,'q1','radio')">
-          <input type="radio" name="q1" value="rar">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q1','check')">
+          <input type="checkbox" name="q1" value="rar">
+          <span class="option-box">✓</span>
           <span class="option-emoji">😅</span>
           Rar, nu prea am unde sau cu cine
         </label>
@@ -559,28 +588,29 @@
     <div class="question-card">
       <div class="q-number">Întrebarea 2</div>
       <div class="q-text">Unde mergi de obicei când vrei grătar în natură?</div>
+      <div class="q-hint">Poți selecta mai multe răspunsuri</div>
       <div class="options" id="q2">
-        <label class="option-label" onclick="selectOption(this,'q2','radio')">
-          <input type="radio" name="q2" value="cernica">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q2','check')">
+          <input type="checkbox" name="q2" value="cernica">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🌲</span>
           Cernica / Brănești / Snagov
         </label>
-        <label class="option-label" onclick="selectOption(this,'q2','radio')">
-          <input type="radio" name="q2" value="parc">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q2','check')">
+          <input type="checkbox" name="q2" value="parc">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🏙️</span>
           Parcuri din oraș (Lumea Copiilor, Crângași)
         </label>
-        <label class="option-label" onclick="selectOption(this,'q2','radio')">
-          <input type="radio" name="q2" value="propriu">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q2','check')">
+          <input type="checkbox" name="q2" value="propriu">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🏡</span>
           La curte/grădina proprie sau a unor prieteni
         </label>
-        <label class="option-label" onclick="selectOption(this,'q2','radio')">
-          <input type="radio" name="q2" value="nicaieri">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q2','check')">
+          <input type="checkbox" name="q2" value="nicaieri">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🤷</span>
           Nu prea am o locație fixă
         </label>
@@ -591,6 +621,8 @@
     <div class="question-card">
       <div class="q-number">Întrebarea 3</div>
       <div class="q-text">Ce îți lipsește cel mai mult la locațiile existente?</div>
+      <div class="q-hint">Poți selecta mai multe răspunsuri</div>
+      <div class="q-hint">Poți selecta mai multe răspunsuri</div>
       <div class="options" id="q3">
         <label class="option-label" onclick="selectOption(this,'q3','check')">
           <input type="checkbox" name="q3" value="intimitate">
@@ -665,28 +697,29 @@
     <div class="question-card">
       <div class="q-number">Întrebarea 5</div>
       <div class="q-text">Cu cine mergi de obicei?</div>
+      <div class="q-hint">Poți selecta mai multe răspunsuri</div>
       <div class="options grid" id="q5">
-        <label class="option-label" onclick="selectOption(this,'q5','radio')">
-          <input type="radio" name="q5" value="familie_copii">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q5','check')">
+          <input type="checkbox" name="q5" value="familie_copii">
+          <span class="option-box">✓</span>
           <span class="option-emoji">👨‍👩‍👧</span>
           Familie cu copii
         </label>
-        <label class="option-label" onclick="selectOption(this,'q5','radio')">
-          <input type="radio" name="q5" value="cuplu">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q5','check')">
+          <input type="checkbox" name="q5" value="cuplu">
+          <span class="option-box">✓</span>
           <span class="option-emoji">💑</span>
           Cuplu (fără copii)
         </label>
-        <label class="option-label" onclick="selectOption(this,'q5','radio')">
-          <input type="radio" name="q5" value="prieteni">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q5','check')">
+          <input type="checkbox" name="q5" value="prieteni">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🍻</span>
           Grup de prieteni
         </label>
-        <label class="option-label" onclick="selectOption(this,'q5','radio')">
-          <input type="radio" name="q5" value="extins">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q5','check')">
+          <input type="checkbox" name="q5" value="extins">
+          <span class="option-box">✓</span>
           <span class="option-emoji">👨‍👩‍👧‍👦</span>
           Familie extinsă (10+ persoane)
         </label>
@@ -714,28 +747,29 @@
     <div class="question-card">
       <div class="q-number">Întrebarea 7</div>
       <div class="q-text">Cum ai prefera să rezervi?</div>
+      <div class="q-hint">Poți selecta mai multe răspunsuri</div>
       <div class="options" id="q7">
-        <label class="option-label" onclick="selectOption(this,'q7','radio')">
-          <input type="radio" name="q7" value="app">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q7','check')">
+          <input type="checkbox" name="q7" value="app">
+          <span class="option-box">✓</span>
           <span class="option-emoji">📱</span>
           Aplicație / website cu calendar online
         </label>
-        <label class="option-label" onclick="selectOption(this,'q7','radio')">
-          <input type="radio" name="q7" value="whatsapp">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q7','check')">
+          <input type="checkbox" name="q7" value="whatsapp">
+          <span class="option-box">✓</span>
           <span class="option-emoji">💬</span>
           WhatsApp / mesaj direct
         </label>
-        <label class="option-label" onclick="selectOption(this,'q7','radio')">
-          <input type="radio" name="q7" value="telefon">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q7','check')">
+          <input type="checkbox" name="q7" value="telefon">
+          <span class="option-box">✓</span>
           <span class="option-emoji">📞</span>
           Telefonic
         </label>
-        <label class="option-label" onclick="selectOption(this,'q7','radio')">
-          <input type="radio" name="q7" value="spontan">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q7','check')">
+          <input type="checkbox" name="q7" value="spontan">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🚶</span>
           Fără rezervare, merg spontan
         </label>
@@ -746,28 +780,29 @@
     <div class="question-card">
       <div class="q-number">Întrebarea 8</div>
       <div class="q-text">Dacă ar exista o astfel de locație mâine, ai merge?</div>
+      <div class="q-hint">Poți selecta mai multe răspunsuri</div>
       <div class="options" id="q8">
-        <label class="option-label" onclick="selectOption(this,'q8','radio')">
-          <input type="radio" name="q8" value="da_sigur">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q8','check')">
+          <input type="checkbox" name="q8" value="da_sigur">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🙌</span>
           Da, sigur! Aștept așa ceva de mult
         </label>
-        <label class="option-label" onclick="selectOption(this,'q8','radio')">
-          <input type="radio" name="q8" value="da_probabil">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q8','check')">
+          <input type="checkbox" name="q8" value="da_probabil">
+          <span class="option-box">✓</span>
           <span class="option-emoji">👍</span>
           Probabil da, depinde de locație și preț
         </label>
-        <label class="option-label" onclick="selectOption(this,'q8','radio')">
-          <input type="radio" name="q8" value="poate">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q8','check')">
+          <input type="checkbox" name="q8" value="poate">
+          <span class="option-box">✓</span>
           <span class="option-emoji">🤔</span>
           Poate, trebuie să văd mai multe detalii
         </label>
-        <label class="option-label" onclick="selectOption(this,'q8','radio')">
-          <input type="radio" name="q8" value="nu">
-          <span class="option-dot"></span>
+        <label class="option-label" onclick="selectOption(this,'q8','check')">
+          <input type="checkbox" name="q8" value="nu">
+          <span class="option-box">✓</span>
           <span class="option-emoji">👎</span>
           Nu mă interesează
         </label>
@@ -856,7 +891,7 @@
     document.getElementById('answeredText').textContent = done + ' din ' + total + ' întrebări';
   }
 
-  function submitForm() {
+  async function submitForm() {
     // Validate minimum answers
     const required = ['q1','q2','q4','q5','q8'];
     const missing = required.filter(k => !answers[k]);
@@ -866,16 +901,55 @@
     }
 
     // Collect all data
-    answers['q6'] = document.getElementById('priceSlider').value;
-    answers['q9'] = document.getElementById('q9').value.trim();
-    answers['timestamp'] = new Date().toISOString();
+    answers['q6_pret_lei'] = document.getElementById('priceSlider').value + ' lei/sesiune';
+    answers['q9_sugestii'] = document.getElementById('q9').value.trim();
+    answers['timestamp'] = new Date().toLocaleString('ro-RO');
 
-    console.log('Sondaj trimis:', JSON.stringify(answers, null, 2));
+    // Labels pentru claritate în email
+    const labels = {
+      q1: 'Frecventa iesiri gratar',
+      q2: 'Locatie actuala preferata',
+      q3: 'Ce lipseste la locatiile existente',
+      q4: 'Distanta maxima acceptata',
+      q5: 'Cu cine merge',
+      q6_pret_lei: 'Pret acceptat per sesiune',
+      q7: 'Mod rezervare preferat',
+      q8: 'Intentia de vizita',
+      q9_sugestii: 'Sugestii suplimentare',
+      timestamp: 'Data si ora'
+    };
 
-    // Show thank you
-    document.getElementById('formArea').style.display = 'none';
-    document.getElementById('thankyou').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Build payload for Formspree
+    const payload = {};
+    for (const [key, val] of Object.entries(answers)) {
+      const label = labels[key] || key;
+      payload[label] = Array.isArray(val) ? val.join(', ') : val;
+    }
+
+    // Disable button
+    const btn = document.querySelector('.submit-btn');
+    btn.textContent = '⏳ Se trimite...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/mkokqljk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        document.getElementById('formArea').style.display = 'none';
+        document.getElementById('thankyou').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      btn.textContent = '🌿 Trimite răspunsurile';
+      btn.disabled = false;
+      alert('A apărut o eroare. Te rugăm să încerci din nou.');
+    }
   }
 
   function copyLink() {
